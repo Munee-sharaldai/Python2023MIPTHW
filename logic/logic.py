@@ -21,7 +21,6 @@ def create_telegram_bot(key, data):
                     f"Экран: {data[3][i]}\n" 
                     f"Технология экрана: {data[4][i]}\n"
                     f"Тип процессора: {data[5][i]}\n"
-                    f"Основная камера: {data[6][i]}\n"
                 )
                 bot.send_message(message.chat.id, response_message)
                 return

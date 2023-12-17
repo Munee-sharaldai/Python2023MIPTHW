@@ -1,17 +1,9 @@
-FROM python:3
+FROM python:3.9
 
-RUN apt update
-RUN apt install python3 -y
+WORKDIR /usr/src/app
 
-WORKDIR /usr/app/src
+COPY . .
 
-COPY main.py ./
-COPY database.py ./
-COPY bot.py ./
-COPY parse.py ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install selenium
-RUN pip install webdriver-manager
-RUN pip install pyTelegramBotAPI
-
-CMD ["python", "main.py"]
+CMD ["python", "./main.py"]

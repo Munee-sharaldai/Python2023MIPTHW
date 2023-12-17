@@ -1,8 +1,17 @@
-version: '3'
+version: '3.8'
+
 services:
-web:
-container_name: bot
-build: .
-restart: on-failure
-ports:
-- "80:80"
+  app:
+    build: .
+    volumes:
+      - D:/parsing/data:/usr/src/app/data  
+    depends_on:
+      - db
+    environment:
+      - TELEGRAM_API_KEY=6653192109:AAGhBzBiP8RB0M3wLS3BX4YHY6l18vfzdhw  
+
+  db:
+    image: nouchka/sqlite3
+    volumes:
+      - D:/parsing/data:/root/data  
+    command: sqlite3 /root/data/data.db

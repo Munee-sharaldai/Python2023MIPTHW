@@ -27,6 +27,7 @@ def scrape_mvideo_data(url):
     html = driver.page_source
     soup = BS(html, "lxml")
 
+    args = []
     iph_names = soup.find_all("a", "product-title__text")
     names = []
     for name in iph_names:
@@ -54,7 +55,6 @@ def scrape_mvideo_data(url):
     screen_list = []
     technology_list = []
     processor_list = []
-    camera_list = []
 
     for ul_element in ul_elements:
         li_elements = ul_element.find_all('li', class_='product-feature-list__item--undefined')
@@ -72,8 +72,6 @@ def scrape_mvideo_data(url):
                     technology_list.append(value)
                 elif name == 'Тип процессора':
                     processor_list.append(value)
-                elif name == 'Основная камера МПикс':
-                    camera_list.append(value)
 
     soup2 = BS(html, "lxml")
     items = soup2.find_all("mvid-plp-product-title", class_="product-card--list__title")
@@ -82,4 +80,4 @@ def scrape_mvideo_data(url):
         item_url = item.find("div", class_='product-title product-title--list').find("a").get('href')
         urls.append(item_url)
 
-    return clear_names, clear_prices, urls, screen_list, technology_list, processor_list, camera_list
+    return clear_names, clear_prices, urls, screen_list, technology_list, processor_list
