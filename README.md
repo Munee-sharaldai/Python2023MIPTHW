@@ -9,7 +9,7 @@
 ```bash
 git clone -b main https://github.com/Munee-sharaldai/Python2023MIPTHW.git
 ```
-2. Зайдить в папку репозитория на локальной машине, используя команду cd:
+2. Зайти в папку репозитория на локальной машине, используя команду cd:
 ```bash
 cd Python2023MIPTHW
 ```
@@ -27,4 +27,4 @@ sudo ./build.sh
 ```bash
 /начать     или         /start
 ```
-6. Ввести название айфона в данном формате: Смартфон Apple iPhone 15 128GB Black (Dual Sim).
+6. Ввести название айфона в данном формате: iPhone 15 128GB Black (Dual Sim).
